@@ -6,7 +6,7 @@ void affiche_pile(pile_t p){
     if(p.valeurs){
       printf("Pile : ");
       
-      for(i=0;i<p.curseur;;++i){
+      for(i=0;i<p.curseur;++i){
 	printf("%d ",p.valeurs[i]);
       }
 
