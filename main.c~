@@ -1,0 +1,21 @@
+#include "truc.h"
+
+void affiche_pile(pile_t p){
+  int i;
+  if(p.curseur!=-1){
+    if(p.valeurs){
+      printf("Pile : ");
+      for(i=0;i<p.curseur;
+    }else{
+      printf("La taille de la liste n'est pas enregistree comme 0 mais elle l'est.\n");
+    }
+  }else{
+    printf("Pile vide\n");
+  }
+}
+
+int main()
+{
+  
+  return 0;
+}
