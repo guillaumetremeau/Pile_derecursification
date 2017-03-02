@@ -28,6 +28,7 @@ int main()
   printf("Test d'initialisation de la pile :\n");
   p = init_pile(35);
   printf("Curseur : -1 == %d\n",p.curseur);
+  printf("Taille : 35 == %d\n",p.taille);
   printf("Tableau : (nil) != %p\n\n",p.valeurs);
 
   printf("\nTest de est_vide partie 1 :\n");
