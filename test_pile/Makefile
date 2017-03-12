@@ -4,10 +4,10 @@ OFLAG = -Wall -pedantic -ansi -Wextra
 CFLAG =
 DEBUG = -g
 PROG =truc
-OFILE = main.o pile.o
+OFILE = main.o ../pile.o
 
 $(PROG):$(OFILE)
-	gcc $? -o $@ $(OFLAG) $(DEBUG)
+	gcc $(PROG) -o $@ $(OFLAG) $(DEBUG)
 
 .o:.c
 	gcc -c $< $(CFLAG)
