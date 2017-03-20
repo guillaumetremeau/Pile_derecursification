@@ -2,11 +2,11 @@
  *
  *				AFFICHER_TAB
  *
- *	Principe
+ *	Parcours un tableau de vakeur à afficher
  *
  *	Lexique :
- *
- *	Retour :
+ * 	- tab : Tableau à afficher (entree)
+ *  - n : Taille du tableau à afficher (entree)
  *
  * -------------------------------------------*/
 void afficher_tab(valeur_t * tab, int n){
@@ -22,12 +22,11 @@ void afficher_tab(valeur_t * tab, int n){
  *
  *				ECHANGER
  *
- *	Principe
+ *	Echange deux valeurs
  *
  *	Lexique :
- *
- *	Retour :
- *
+ *  - a : premiere valeur d'echange
+ *  - b : seconde valeur d'echange
  * -------------------------------------------*/
 void echanger(valeur_t * a, valeur_t * b){
 	valeur_t temp = *b;
@@ -39,12 +38,16 @@ void echanger(valeur_t * a, valeur_t * b){
  *
  *				TRUC
  *
- *	Principe
+ *	Algorithme truc en version iterative
  *
  *	Lexique :
- *
- *	Retour :
- *
+ *  - i
+ *  - n : taille max du tableau de valeur (entree)
+ *  - tab : tableau de valeur (entree/sortie)
+ *  - j : variable d'itération
+ *  - pile : pile d'utilisation de l'algorithme
+ *  - continuer : valeur (0 ou 1) indiquant s'il faut
+ * continuer l'algorithme ou non
  * -------------------------------------------*/
 void truc(valeur_t * i, int n, valeur_t * tab){
 	pile_t pile;
@@ -75,16 +78,16 @@ void truc(valeur_t * i, int n, valeur_t * tab){
  *
  *				TRUC_REC
  *
- *	Principe
+ *	Algorithme truc en version recursive
  *
  *	Lexique :
- *
- *	Retour :
- *
+ *  - i
+ *  - n : taille max du tableau de valeur (entree)
+ *  - tab : tableau de valeur (entree/sortie)
+ *  - j : variable d'iteration
  * -------------------------------------------*/
 void truc_rec(valeur_t i, int n, valeur_t * tab){
-	valeu_t j;
-	valeur_t temp;
+	valeur_t j;
 	if (i == n){
 		afficher_tab(tab, n);
 	}else{
