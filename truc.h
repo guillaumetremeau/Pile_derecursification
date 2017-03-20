@@ -1,6 +1,7 @@
-#ifndef _PIL_PILEDEREC_TREMEAU_KLEVH_
-#define _PIL_PILEDEREC_TREMEAU_KLEVH_
+#ifndef _TRUC_PILEDEREC_TREMEAU_KLEVH_
+#define _TRUC_PILEDEREC_TREMEAU_KLEVH_
 
+#include <stdio.h>
 #include "pile.h"
 
 /*----------------------------------------------------------
@@ -12,7 +13,7 @@
  *	Retour :
  *
  * --------------------------------------------------------*/
-void afficher_tab(valeur_t *, n);
+void afficher_tab(valeur_t *,int);
 
 
 /*----------------------------------------------------------

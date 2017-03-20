@@ -1,3 +1,5 @@
+#include "truc.h"
+
 /*---------------------------------------------
  *
  *				AFFICHER_TAB
@@ -14,6 +16,7 @@ void afficher_tab(valeur_t * tab, int n){
 	for(j=0;j<n;j++){
 		printf("%d ", tab[j]);
 	}
+	printf("\n");
 }
 
 
@@ -46,28 +49,33 @@ void echanger(valeur_t * a, valeur_t * b){
  *	Retour :
  *
  * -------------------------------------------*/
-void truc(valeur_t * i, int n, valeur_t * tab){
-	pile_t pile;
-	valeur_t * j;
-	int continuer;
 
-	continuer = 1;
-	*j = 1;
-	pile = init_pile(n);
-	while (continuer = 1){
-		while (*j != n)) {
-			empiler(pile, *i);
-			empiler(pile, *j);
-			echanger(tab[*i], tab[*j]);
-			(*i)++;
-			*j = *i;
+void truc(int i, int n, valeur_t * tab){
+        pile_t pile = init_pile(2*n);;
+	int    j = i-1;
+	int    iInit = i;
+	int    continuer = 1;
+	
+
+	while (continuer){
+		while (i != n && j!=n) {
+			empiler(&pile, i);
+			empiler(&pile, j);
+			echanger(tab+i-1, tab+j);
+			i++;
+			j=i-1;
 		}
-		afficher_tab(tab, n);
-		if( !(est_vide(pile))){
-			echanger(tab[*i], tab[*j]);
-			depiler(pile, j);
-			depiler(pile, i);
-		}else continuer = 0;
+		if(j!=n){
+		  afficher_tab(tab, n);
+		}
+		if(!est_vide(pile)){
+			depiler(&pile, &j);
+			depiler(&pile, &i);
+			echanger(tab+i-1, tab+j);
+			j++;
+		}else{
+		        continuer = 0;
+		}
 	}
 }
 
@@ -82,16 +90,16 @@ void truc(valeur_t * i, int n, valeur_t * tab){
  *	Retour :
  *
  * -------------------------------------------*/
-void truc_rec(valeur_t i, int n, valeur_t * tab){
-	valeu_t j;
-	valeur_t temp;
+void truc_rec(int i, int n, valeur_t * tab){
+	int j;
+        
 	if (i == n){
 		afficher_tab(tab, n);
 	}else{
-		for(j=i-1; j<n; i++){
-			echanger(tab[i], tab[j]);
-			truc(i+1, n, tab);
-			echanger(tab[i],tab[j]);
+		for(j=i-1; j<n; j++){
+			echanger(tab+i-1, tab+j);
+			truc_rec(i+1, n, tab);
+			echanger(tab+i-1,tab+j);
 		}
 	}
 }

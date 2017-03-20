@@ -1,13 +1,13 @@
 #!/bin/makefile
 
-OFLAG = -Wall -pedantic -ansi -Wextra
-CFLAG =
+OFLAG = 
+CFLAG =-Wall -pedantic -ansi -Wextra
 DEBUG = -g
 PROG =truc
 OFILE = main.o truc.o pile.o
 
 $(PROG):$(OFILE)
-	gcc $? -o $@ $(OFLAG) $(DEBUG)
+	gcc $(OFILE) -o $@ $(OFLAG) $(DEBUG)
 
 .o:.c
 	gcc -c $< $(CFLAG)

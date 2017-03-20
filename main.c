@@ -1,26 +1,31 @@
+#include <string.h>
+
 #include "truc.h"
 
-void affiche_pile(pile_t p){
-  int i;
-  if(p.curseur!=-1){
-    if(p.valeurs){
-      printf("Pile : ");
-      
-      for(i=0;i<p.curseur;++i){
-	printf("%d ",p.valeurs[i]);
-      }
+#define SIZE 3
 
-      printf("\n");
-    }else{
-      printf("Le curseur ne vaut pas -1 mais la pile est libere\n");
-    }
-  }else{
-    printf("Pile vide\n");
-  }
-}
-
-int main()
+int main(int argc, char *argv[])
 {
+  int i,n;
+  int tab[SIZE];
+
+  for(i=0;i<SIZE;++i){
+    tab[i]=i+1;
+  }
+
+  printf("Tableau de test : ");
+  afficher_tab(tab,SIZE);
+  
+  for(n=1;n<=SIZE;++n){
+    for(i=n;i>0;--i){
+      printf("\nTaille du tableau : %d ; indice de depart : %d.\n",n,i);
+      printf("Resultat de l'appel de truc recursif :\n");
+      truc_rec(i,n,tab);
+      printf("Resultat de l'appel de truc iteratif :\n");
+      truc(i,n,tab);
+    }
+  }
   
   return 0;
 }
+
