@@ -80,6 +80,8 @@ void truc(int i, int n, valeur_t * tab){
 		        continuer = 0;
 		}
 	}
+
+	free_pile(&pile);
 }
 
 /*---------------------------------------------

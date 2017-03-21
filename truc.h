@@ -8,18 +8,12 @@
  *
  *				AFFICHER_TAB
  *
-<<<<<<< HEAD
  *	Principe :
  *
  *	Retour :
  *
- * --------------------------------------------------------*/
+ * --------------------------------------------*/
 void afficher_tab(valeur_t *,int);
-=======
- *	Parcours un tableau de vakeur à afficher
- * -------------------------------------------*/
-void afficher_tab(valeur_t *, n);
->>>>>>> 48ef98c57702de0dcd7c8bf287d0d69a188bff01
 
 
 /*---------------------------------------------
